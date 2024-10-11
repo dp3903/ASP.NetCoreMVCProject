@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Visual-studio-Apps\\QuizApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|QuizApp\\QuizApp.csproj|e:\\visual-studio-apps\\quizapp\\quizapp\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|QuizApp\\QuizApp.csproj|solutionrelative:quizapp\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|QuizApp\\QuizApp.csproj|e:\\visual-studio-apps\\quizapp\\quizapp\\models\\bookmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|QuizApp\\QuizApp.csproj|solutionrelative:quizapp\\models\\bookmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|QuizApp\\QuizApp.csproj|e:\\visual-studio-apps\\quizapp\\quizapp\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|QuizApp\\QuizApp.csproj|solutionrelative:quizapp\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|QuizApp\\QuizApp.csproj|e:\\visual-studio-apps\\quizapp\\quizapp\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|QuizApp\\QuizApp.csproj|solutionrelative:quizapp\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|QuizApp\\QuizApp.csproj|e:\\visual-studio-apps\\quizapp\\quizapp\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|QuizApp\\QuizApp.csproj|solutionrelative:quizapp\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|QuizApp\\QuizApp.csproj|e:\\visual-studio-apps\\quizapp\\quizapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|QuizApp\\QuizApp.csproj|solutionrelative:quizapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "role.cs",
+              "DocumentMoniker": "E:\\Visual-studio-Apps\\QuizApp\\QuizApp\\Models\\role.cs",
+              "RelativeDocumentMoniker": "QuizApp\\Models\\role.cs",
+              "ToolTip": "E:\\Visual-studio-Apps\\QuizApp\\QuizApp\\Models\\role.cs",
+              "RelativeToolTip": "QuizApp\\Models\\role.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T12:08:22.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDBContext.cs",
+              "DocumentMoniker": "E:\\Visual-studio-Apps\\QuizApp\\QuizApp\\Models\\AppDBContext.cs",
+              "RelativeDocumentMoniker": "QuizApp\\Models\\AppDBContext.cs",
+              "ToolTip": "E:\\Visual-studio-Apps\\QuizApp\\QuizApp\\Models\\AppDBContext.cs",
+              "RelativeToolTip": "QuizApp\\Models\\AppDBContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T11:45:48.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "E:\\Visual-studio-Apps\\QuizApp\\QuizApp\\Models\\UserModel.cs",
+              "RelativeDocumentMoniker": "QuizApp\\Models\\UserModel.cs",
+              "ToolTip": "E:\\Visual-studio-Apps\\QuizApp\\QuizApp\\Models\\UserModel.cs",
+              "RelativeToolTip": "QuizApp\\Models\\UserModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T11:36:35.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookModel.cs",
+              "DocumentMoniker": "E:\\Visual-studio-Apps\\QuizApp\\QuizApp\\Models\\BookModel.cs",
+              "RelativeDocumentMoniker": "QuizApp\\Models\\BookModel.cs",
+              "ToolTip": "E:\\Visual-studio-Apps\\QuizApp\\QuizApp\\Models\\BookModel.cs",
+              "RelativeToolTip": "QuizApp\\Models\\BookModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T11:30:53.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "E:\\Visual-studio-Apps\\QuizApp\\QuizApp\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "QuizApp\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "E:\\Visual-studio-Apps\\QuizApp\\QuizApp\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "QuizApp\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-11T10:22:11.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\Visual-studio-Apps\\QuizApp\\QuizApp\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "QuizApp\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\Visual-studio-Apps\\QuizApp\\QuizApp\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "QuizApp\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T10:10:40.414Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
