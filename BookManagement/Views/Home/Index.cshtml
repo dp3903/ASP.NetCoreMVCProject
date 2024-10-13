@@ -1,9 +1,30 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     string username = ViewBag.username;
+    string role = ViewData["role"] as string;
 }
 
+@model IEnumerable<BookModel>
+
 <div class="text-center">
-    <h1 class="display-4">Welcome @username</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome @username, you are @role</h1>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Books List</h2>
+    <div class="row">
+        @foreach (var book in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">@book.Title</h5>
+                        <h6 class="card-subtitle text-muted mb-2">By @book.Author</h6>
+                        <p class="card-text">Price: $@book.price</p>
+                        <a asp-controller="Home" asp-action="Details" asp-route-id="@book.Id" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>

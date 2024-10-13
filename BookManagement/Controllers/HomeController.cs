@@ -8,19 +8,24 @@ namespace BookManagement.Controllers
     {
         const string SessionUserName = "_username";
         const string SessionUserId = "_id";
+        const string SessionUserRole = "_role";
         private readonly IUserRepository _userRepository;
+        private readonly IBookRepository _bookRepository;
 
-        public HomeController(IUserRepository userRepository)
+        public HomeController(IUserRepository userRepository, IBookRepository bookRepository)
         {
             _userRepository = userRepository;
+            _bookRepository = bookRepository;
         }
 
         public IActionResult Index()
         {
             if (HttpContext.Session.GetString(SessionUserName) != null)
             {
+                IEnumerable<BookModel> books = _bookRepository.GetAll();
                 ViewBag.username = HttpContext.Session.GetString(SessionUserName);
-                return View();
+                ViewData["role"] = HttpContext.Session.GetString(SessionUserRole);
+                return View(books);
             }
             return RedirectToAction("SignIn");
         }
@@ -41,6 +46,7 @@ namespace BookManagement.Controllers
                 {
                     HttpContext.Session.SetString(SessionUserName, user.UserName);
                     HttpContext.Session.SetInt32(SessionUserId, user.Id);
+                    HttpContext.Session.SetString(SessionUserRole, user.Role.ToString());
                     return RedirectToAction("Index");
                 }
                 ViewBag.errormsg = "Invalid user information. no such user exists.";
@@ -85,6 +91,50 @@ namespace BookManagement.Controllers
             HttpContext.Session.Remove(SessionUserId);
 
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            BookModel book = _bookRepository.GetById(id);
+            return View(book);
+        }
+
+        [HttpGet]
+        public IActionResult AdminIndex()
+        {
+            if (HttpContext.Session.GetString(SessionUserRole) == "Admin")
+            {
+                IEnumerable<UserModel> users = _userRepository.GetAll();
+                return View(users);
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult DemoteToReader(int id)
+        {
+            UserModel user = _userRepository.GetById(id);
+            if (user == null || user.Role != Roles.Author)
+            {
+                return RedirectToAction("AdminIndex");
+            }
+            user.Role = Roles.Reader;
+            _userRepository.Update(user);
+            return RedirectToAction("AdminIndex");
+        }
+
+        [HttpPost]
+        public IActionResult PromoteToAuthor(int id)
+        {
+            UserModel user = _userRepository.GetById(id);
+            if (user == null || user.Role != Roles.Reader)
+            {
+                return RedirectToAction("AdminIndex");
+            }
+            user.Role = Roles.Author;
+            _userRepository.Update(user);
+            return RedirectToAction("AdminIndex");
         }
     }
 }

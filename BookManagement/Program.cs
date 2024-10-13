@@ -18,6 +18,7 @@ builder.Services.AddDbContextPool<AppDBContext>(
     }
 );
 builder.Services.AddScoped<IUserRepository, SQLUserRepository>();
+builder.Services.AddScoped<IBookRepository, SQLBookRepository>();
 
 var app = builder.Build();
 

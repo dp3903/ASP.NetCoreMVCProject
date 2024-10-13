@@ -7,5 +7,6 @@
         UserModel Add(UserModel user);
         UserModel Update(UserModel user);
         UserModel Delete(int id);
+        IEnumerable<UserModel> GetAll();
     }
 }

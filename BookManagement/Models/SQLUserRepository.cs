@@ -44,5 +44,10 @@
             }
             return user;
         }
+
+        public IEnumerable<UserModel> GetAll()
+        {
+            return context.Users;
+        }
     }
 }

@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Admin-index";
+}
+
+@model IEnumerable<UserModel>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">User Management</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.UserName</td>
+                    <td>
+                        @if (user.Role == Roles.Admin)
+                        {
+                            <span class="badge bg-primary">Admin</span>
+                        }
+                        else if (user.Role == Roles.Author)
+                        {
+                            <span class="badge bg-success">Author</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">Reader</span>
+                        }
+                    </td>
+                    <td>
+                        @if (user.Role == Roles.Admin)
+                        {
+                            <span class="text-muted">No actions available for Admin</span>
+                        }
+                        else if (user.Role == Roles.Author)
+                        {
+                            <form asp-action="DemoteToReader" method="post" class="d-inline">
+                                <input type="hidden" name="id" value="@user.Id" />
+                                <button type="submit" class="btn btn-warning btn-sm">Demote to Reader</button>
+                            </form>
+                        }
+                        else if (user.Role == Roles.Reader)
+                        {
+                            <form asp-action="PromoteToAuthor" method="post" class="d-inline">
+                                <input type="hidden" name="id" value="@user.Id" />
+                                <button type="submit" class="btn btn-primary btn-sm">Promote to Author</button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-action="Index" class="btn btn-secondary mt-4">Back to Home</a>
+</div>

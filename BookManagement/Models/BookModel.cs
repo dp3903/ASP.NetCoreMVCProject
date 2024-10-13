@@ -7,7 +7,7 @@
         public string Description { get; set; }
         public string Author { get; set; }
         public DateTime Created { get; set; }
-        public int ISBN { get; set; }
+        public long ISBN { get; set; }
         public string author_email { get; set; }
         public int price { get; set; }
     }
