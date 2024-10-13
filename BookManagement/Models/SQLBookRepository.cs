@@ -18,5 +18,30 @@
         {
             return context.Books.Find(id);
         }
+
+        public BookModel Add(BookModel book)
+        {
+            context.Books.Add(book);
+            return book;
+        }
+
+        public BookModel Update(BookModel book)
+        {
+            var updatedbook = context.Books.Attach(book);
+            updatedbook.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            context.SaveChanges();
+            return book;
+        }
+
+        public BookModel Delete(int id)
+        {
+            BookModel book = context.Books.Find(id);
+            if (book != null)
+            {
+                context.Books.Remove(book);
+                context.SaveChanges();
+            }
+            return book;
+        }
     }
 }

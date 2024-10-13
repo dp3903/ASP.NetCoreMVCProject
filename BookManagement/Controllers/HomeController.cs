@@ -136,5 +136,32 @@ namespace BookManagement.Controllers
             _userRepository.Update(user);
             return RedirectToAction("AdminIndex");
         }
+
+        [HttpGet]
+        public IActionResult CreateBook()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateBook(BookModel book)
+        {
+            book = _bookRepository.Add(book);
+            return RedirectToAction("Details",book.Id);
+        }
+
+        [HttpGet]
+        public IActionResult EditBook(int id)
+        {
+            BookModel book = _bookRepository.GetById(id);
+            return View(book);
+        }
+
+        [HttpPost]
+        public IActionResult EditBook(BookModel book)
+        {
+            book = _bookRepository.Update(book);
+            return RedirectToAction("Details", book.Id);
+        }
     }
 }

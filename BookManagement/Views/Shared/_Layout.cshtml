@@ -28,6 +28,13 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminIndex">Admin</a>
                             </li>
                         }
+
+                        @if ((ViewData["role"] as string) != "Reader")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="CreateBook">Create New Book</a>
+                            </li>
+                        }
                         
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SignOut">Sign-out</a>
