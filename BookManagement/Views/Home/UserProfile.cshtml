@@ -1,0 +1,17 @@
+﻿@model BookManagement.Models.UserModel
+
+@{
+    ViewData["Title"] = "User Profile";
+}
+
+<h2>User Profile</h2>
+
+<div>
+    <p><strong>Username:</strong> @Model.UserName</p>
+    <p><strong>Password:</strong> @Model.Password</p>
+
+    <a asp-action="EditProfile" class="btn btn-primary">Edit Profile</a>
+    <form asp-action="DeleteProfile" method="post">
+        <button type="submit" class="btn btn-danger">Delete Profile</button>
+    </form>
+</div>

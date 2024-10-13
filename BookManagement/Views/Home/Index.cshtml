@@ -22,6 +22,14 @@
                         <h6 class="card-subtitle text-muted mb-2">By @book.Author</h6>
                         <p class="card-text">Price: $@book.price</p>
                         <a asp-controller="Home" asp-action="Details" asp-route-id="@book.Id" class="btn btn-primary">View Details</a>
+
+                        @if (ViewData["role"]?.ToString() == "Admin" || ViewData["role"]?.ToString() == "Author")
+                        {
+                            <a asp-controller="Home" asp-action="EditBook" asp-route-id="@book.Id" class="btn btn-warning">Edit</a>
+                            <form asp-controller="Home" asp-action="DeleteBook" asp-route-id="@book.Id" method="post" style="display:inline">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        }
                     </div>
                 </div>
             </div>

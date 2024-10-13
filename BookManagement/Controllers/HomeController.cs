@@ -93,14 +93,22 @@ namespace BookManagement.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
-        public IActionResult Details(int id)
-        {
-            BookModel book = _bookRepository.GetById(id);
-            return View(book);
-        }
+		[HttpGet]
+		public IActionResult Details(int id)
+		{
+			if (id <= 0)
+			{
+				return NotFound();
+			}
+			BookModel book = _bookRepository.GetById(id);
+			if (book == null)
+			{
+				return NotFound();
+			}
+			return View(book);
+		}
 
-        [HttpGet]
+		[HttpGet]
         public IActionResult AdminIndex()
         {
             if (HttpContext.Session.GetString(SessionUserRole) == "Admin")
@@ -137,31 +145,151 @@ namespace BookManagement.Controllers
             return RedirectToAction("AdminIndex");
         }
 
+		[HttpGet]
+		public IActionResult CreateBook()
+		{
+			string role = HttpContext.Session.GetString(SessionUserRole);
+			if (role == "Admin" || role == "Author")
+			{
+				return View();
+			}
+			// Redirect to Index if the user is a Reader or not logged in
+			return RedirectToAction("Index");
+		}
+
+		[HttpPost]
+		public IActionResult CreateBook(BookModel book)
+		{
+			string role = HttpContext.Session.GetString(SessionUserRole);
+			if (role == "Admin" || role == "Author")
+			{
+				book = _bookRepository.Add(book);
+
+				// Check if the book's ID is correctly generated
+				if (book.Id > 0)
+				{
+					return RedirectToAction("Details", new { id = book.Id });
+				}
+
+				ViewBag.ErrorMessage = "Error adding book. Please try again.";
+				return View(book);
+			}
+
+			return RedirectToAction("Index");
+		}
+
+		[HttpGet]
+		public IActionResult EditBook(int id)
+		{
+			string role = HttpContext.Session.GetString(SessionUserRole);
+			if (role == "Admin" || role == "Author")
+			{
+				BookModel book = _bookRepository.GetById(id);
+				if (book == null)
+				{
+					return NotFound();
+				}
+				return View(book);
+			}
+			return RedirectToAction("Index");
+		}
+
+		[HttpPost]
+		public IActionResult EditBook(BookModel book)
+		{
+			string role = HttpContext.Session.GetString(SessionUserRole);
+			if (role == "Admin" || role == "Author")
+			{
+				_bookRepository.Update(book);
+				return RedirectToAction("Details", new { id = book.Id });
+			}
+			return RedirectToAction("Index");
+		}
+
+		[HttpPost]
+		public IActionResult DeleteBook(int id)
+		{
+			string role = HttpContext.Session.GetString(SessionUserRole);
+			if (role == "Admin" || role == "Author")
+			{
+				BookModel book = _bookRepository.Delete(id);
+				if (book == null)
+				{
+					return NotFound();
+				}
+				return RedirectToAction("Index");
+			}
+			return RedirectToAction("Index");
+		}
+
+        //User Profile Functionality
+
         [HttpGet]
-        public IActionResult CreateBook()
+        public IActionResult UserProfile()
         {
-            return View();
+            int? userId = HttpContext.Session.GetInt32(SessionUserId);
+            if (userId.HasValue)
+            {
+                UserModel user = _userRepository.GetById(userId.Value);
+                if (user != null)
+                {
+                    return View(user);  // Ensure you have a UserProfile view.
+                }
+            }
+            return RedirectToAction("SignIn");
+        }
+
+        [HttpGet]
+        public IActionResult EditProfile()
+        {
+            int? userId = HttpContext.Session.GetInt32(SessionUserId);
+            if (userId.HasValue)
+            {
+                UserModel user = _userRepository.GetById(userId.Value);
+                if (user != null)
+                {
+                    return View(user);
+                }
+            }
+            return RedirectToAction("SignIn");
         }
 
         [HttpPost]
-        public IActionResult CreateBook(BookModel book)
+        public IActionResult EditProfile(UserModel model)
         {
-            book = _bookRepository.Add(book);
-            return RedirectToAction("Details",book.Id);
-        }
+            if (ModelState.IsValid)
+            {
+                UserModel currentUser = _userRepository.GetById(model.Id); // Fetch current user by ID
 
-        [HttpGet]
-        public IActionResult EditBook(int id)
-        {
-            BookModel book = _bookRepository.GetById(id);
-            return View(book);
+                if (currentUser != null)
+                {
+                    // Update password only if the user enters a new one, otherwise keep the old one
+                    if (!string.IsNullOrEmpty(model.UserName) && !string.IsNullOrEmpty(model.Password))
+                    {
+                        currentUser.UserName = model.UserName;
+                        currentUser.Password = model.Password; // Update password
+                    }
+
+                    _userRepository.Update(currentUser);    // Update user in the database
+                    return RedirectToAction("UserProfile"); // Redirect to profile page after editing
+                }
+            }
+
+            // Return the view with the model if validation fails or user not found
+            return View(model);
         }
 
         [HttpPost]
-        public IActionResult EditBook(BookModel book)
+        public IActionResult DeleteProfile()
         {
-            book = _bookRepository.Update(book);
-            return RedirectToAction("Details", book.Id);
+            int? userId = HttpContext.Session.GetInt32(SessionUserId);
+            if (userId.HasValue)
+            {
+                _userRepository.Delete(userId.Value);
+                HttpContext.Session.Clear();
+                return RedirectToAction("SignIn");
+            }
+            return RedirectToAction("Index");
         }
     }
 }

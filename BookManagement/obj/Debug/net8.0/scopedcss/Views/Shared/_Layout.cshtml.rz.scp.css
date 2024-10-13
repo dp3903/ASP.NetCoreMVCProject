@@ -1,48 +1,80 @@
 /* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand[b-5pfx37we21] {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+/* Navbar Brand Styling */
+.navbar-brand[b-bh98hxml06] {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    font-weight: bold; /* Make brand name bold */
+    font-size: 1.5rem; /* Increase font size for visibility */
 }
 
-a[b-5pfx37we21] {
-  color: #0077cc;
+/* General Link Styles */
+a[b-bh98hxml06] {
+    color: #0077cc; /* Default link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: 500; /* Medium font weight for links */
 }
 
-.btn-primary[b-5pfx37we21] {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+/* Distinct Navigation Link Styles */
+.navbar-nav .nav-link[b-bh98hxml06] {
+    padding: 10px 15px; /* Adjust padding for better spacing */
+    border-radius: 5px; /* Slight rounding of corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
-.nav-pills .nav-link.active[b-5pfx37we21], .nav-pills .show > .nav-link[b-5pfx37we21] {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    /* Hover effect for nav links */
+    .navbar-nav .nav-link:hover[b-bh98hxml06] {
+        color: #fff; /* Text color on hover */
+        background-color: #0077cc; /* Background color on hover */
+    }
+
+    /* Active link styling */
+    .navbar-nav .nav-link.active[b-bh98hxml06] {
+        color: #fff; /* Text color for active link */
+        background-color: #1b6ec2; /* Background color for active link */
+    }
+
+/* Button Primary Styling */
+.btn-primary[b-bh98hxml06] {
+    color: #fff; /* Text color */
+    background-color: #1b6ec2; /* Button background color */
+    border-color: #1861ac; /* Button border color */
+    padding: 10px 20px; /* Add padding for buttons */
 }
 
-.border-top[b-5pfx37we21] {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom[b-5pfx37we21] {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow[b-5pfx37we21] {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+/* Additions for distinctness */
+.navbar-nav .nav-link[b-bh98hxml06] {
+    font-size: 1.1rem; /* Slightly larger font size for nav links */
+    margin-right: 10px; /* Space between links */
 }
 
-button.accept-policy[b-5pfx37we21] {
-  font-size: 1rem;
-  line-height: inherit;
+/* Border styles */
+.border-top[b-bh98hxml06] {
+    border-top: 1px solid #e5e5e5;
 }
 
-.footer[b-5pfx37we21] {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+.border-bottom[b-bh98hxml06] {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Box Shadow */
+.box-shadow[b-bh98hxml06] {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+/* Policy Button */
+button.accept-policy[b-bh98hxml06] {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Footer Styling */
+.footer[b-bh98hxml06] {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
 }

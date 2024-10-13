@@ -22,6 +22,7 @@
         public BookModel Add(BookModel book)
         {
             context.Books.Add(book);
+            context.SaveChanges();
             return book;
         }
 

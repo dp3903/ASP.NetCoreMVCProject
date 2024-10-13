@@ -18,26 +18,25 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        @if((ViewData["role"] as string ) == "Admin")
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
+                        <!-- Display "Create Book" only if the user is an Admin or Author -->
+                        @if (Context.Session.GetString("_role") == "Admin" || Context.Session.GetString("_role") == "Author")
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminIndex">Admin</a>
+                                <a class="nav-link" asp-controller="Home" asp-action="CreateBook">Create Book</a>
                             </li>
                         }
 
-                        @if ((ViewData["role"] as string) != "Reader")
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="CreateBook">Create New Book</a>
-                            </li>
-                        }
-                        
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SignOut">Sign-out</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="UserProfile">My Profile</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="SignOut">Sign Out</a>
                         </li>
                     </ul>
                 </div>
