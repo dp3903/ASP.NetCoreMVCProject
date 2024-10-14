@@ -9,13 +9,13 @@ namespace BookManagement.Models
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int Id { get; set; }
 
-		[Required, MaxLength(20)]
+		[Required, MaxLength(50)]
 		public string Title { get; set; }
 
 		[Required, MaxLength(200)]
 		public string Description { get; set; }
 
-		[Required, MaxLength(20)]
+		[Required, MaxLength(50)]
 		public string Author { get; set; }
 
 		[Required, StringLength(13, MinimumLength = 13, ErrorMessage = "ISBN must be 13 characters long.")]

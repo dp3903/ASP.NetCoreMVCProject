@@ -31,6 +31,14 @@
                             </li>
                         }
 
+                        <!-- Display "Admin index" only if the user is an Admin -->
+                        @if (Context.Session.GetString("_role") == "Admin")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Home" asp-action="AdminIndex">Admin</a>
+                            </li>
+                        }
+
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Home" asp-action="UserProfile">My Profile</a>
                         </li>

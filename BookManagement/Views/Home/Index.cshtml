@@ -23,7 +23,7 @@
                         <p class="card-text">Price: $@book.price</p>
                         <a asp-controller="Home" asp-action="Details" asp-route-id="@book.Id" class="btn btn-primary">View Details</a>
 
-                        @if (ViewData["role"]?.ToString() == "Admin" || ViewData["role"]?.ToString() == "Author")
+                        @if (ViewData["role"]?.ToString() == "Admin" || (ViewData["role"]?.ToString() == "Author" && Context.Session.GetString("_username") == book.Author))
                         {
                             <a asp-controller="Home" asp-action="EditBook" asp-route-id="@book.Id" class="btn btn-warning">Edit</a>
                             <form asp-controller="Home" asp-action="DeleteBook" asp-route-id="@book.Id" method="post" style="display:inline">
