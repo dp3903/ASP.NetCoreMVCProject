@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Visual-studio-Apps\\BookManagement\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|BookManagement\\BookManagement.csproj|e:\\visual-studio-apps\\bookmanagement\\bookmanagement\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|BookManagement\\BookManagement.csproj|e:\\visual-studio-apps\\bookmanagement\\bookmanagement\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|BookManagement\\BookManagement.csproj|e:\\visual-studio-apps\\bookmanagement\\bookmanagement\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A10EF929-EC20-4255-A1EA-E268B1CE2F3E}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\Visual-studio-Apps\\BookManagement\\BookManagement\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "BookManagement\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\Visual-studio-Apps\\BookManagement\\BookManagement\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "BookManagement\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAADwvyEAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T11:05:10.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "site.css",
+              "DocumentMoniker": "E:\\Visual-studio-Apps\\BookManagement\\BookManagement\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "BookManagement\\wwwroot\\css\\site.css",
+              "ToolTip": "E:\\Visual-studio-Apps\\BookManagement\\BookManagement\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "BookManagement\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABkAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-15T10:48:41.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Visual-studio-Apps\\BookManagement\\BookManagement\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "BookManagement\\Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\Visual-studio-Apps\\BookManagement\\BookManagement\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "BookManagement\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA8AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-15T10:45:22.932Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

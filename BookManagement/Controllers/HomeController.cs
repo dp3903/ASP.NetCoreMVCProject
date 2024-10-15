@@ -18,11 +18,21 @@ namespace BookManagement.Controllers
             _bookRepository = bookRepository;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string? searchstr)
         {
             if (HttpContext.Session.GetString(SessionUserName) != null)
             {
                 IEnumerable<BookModel> books = _bookRepository.GetAll();
+
+                // Check if a search string is provided
+                if (!string.IsNullOrEmpty(searchstr))
+                {
+                    // Filter books where the Title or Author contains the search string (case-insensitive)
+                    books = books.Where(b =>
+                        b.Title.Contains(searchstr, StringComparison.OrdinalIgnoreCase) ||
+                        b.Author.Contains(searchstr, StringComparison.OrdinalIgnoreCase));
+                }
+
                 ViewBag.username = HttpContext.Session.GetString(SessionUserName);
                 ViewData["role"] = HttpContext.Session.GetString(SessionUserRole);
                 return View(books);

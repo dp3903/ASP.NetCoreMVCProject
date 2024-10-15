@@ -10,6 +10,15 @@
     <h1 class="display-4">Welcome @username, you are @role</h1>
 </div>
 
+<div style="display: flex; align-items:center; justify-content:center;">
+    <form asp-action="Index" class="my-3" id="search">
+        <div class="input-group mb-3">
+            <input name="searchstr" type="text" class="form-control" placeholder="Search by author or title..." aria-label="search" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">search</button>
+        </div>
+    </form>
+</div>
+
 <div class="container mt-5">
     <h2 class="text-center mb-4">Books List</h2>
     <div class="row">
